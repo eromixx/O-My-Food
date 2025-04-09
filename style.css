@@ -1,3 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+body {
+  background-color: whitesmoke;
+}
+
+.section-header {
+  background-color: #F2F2F2;
+}
+
+.header-title {
+  display: flex;
+  justify-content: center;
+  font-style: oblique;
+  font-weight: 900;
+}
+
+.form-header {
+  display: flex;
+  justify-content: center;
+  background-color: lightgrey;
+  font-weight: 700;
+}
+
+.first-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.button-one {
+  padding: 15px;
+  border: none;
+  background-color: purple;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
 /*# sourceMappingURL=style.css.map */
