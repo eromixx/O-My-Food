@@ -8,6 +8,7 @@
     background-color: lightgrey;
     font-weight: 900;
     text-align: center;
+    padding: 10px;
 }
 
 
@@ -15,7 +16,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: lightgray;
     padding: 50px;
     .div-first-section {
         display: flex;
@@ -27,7 +27,7 @@
 .button-one {
     padding: 15px;
     border: none;
-    background-color: purple;
+    background: linear-gradient(#FF79DA,#9356DC);
     border-radius: 20px;
     color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -44,16 +44,26 @@
 
 .list-operation {
     list-style-type: none;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding-top: 20px;
 }
 
 .operation {
-    background-color: #f1f1f1;
+    background-color: #F6F6F6;
     padding: 15px;
     border-radius: 10px;
     position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 100%;
     p {
         display: flex;
         gap: 10px;
+        font-weight: 400;
+        text-align: center;
+        padding-left: 10px;
     }
     span {
         background-color: #9356DC;
@@ -67,13 +77,18 @@
         align-items: center;
         color: white;
     }
+    i {
+        color: #9356DC;
+    }
 }
-
 
 
 .restaurant-section {
     display: flex;
     flex-direction: column;
+    h2 {
+        padding-left: 30px;
+    }
 }
 
 .restaurant-a {
@@ -90,6 +105,7 @@
     height: 250px;
     padding-bottom: 330px;
     contain: content;     
+    border-radius: 15px;
   }
 
 .card img {
@@ -98,12 +114,10 @@
     object-fit: cover;
 }
   
-  /* On mouse-over, add a deeper shadow */
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
-  /* Add some padding inside the card container */
   .container {
     padding: 2px 16px;
   }
