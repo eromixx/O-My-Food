@@ -1,0 +1,12 @@
+.header-restaurant {
+    display: flex;
+    justify-content: center;
+    nav {
+        display: flex;
+        align-items: center;
+    }
+    h1 {
+        font-style: italic;
+        font-weight: 800;
+    }
+}
