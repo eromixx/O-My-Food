@@ -1,3 +1,7 @@
+body {
+    background-color: #f6f6f6;
+}
+
 .header-restaurant {
     display: flex;
     justify-content: center;
@@ -8,5 +12,46 @@
     h1 {
         font-style: italic;
         font-weight: 800;
+    }
+}
+
+.restaurant-name {
+    position: absolute;
+    border-radius: 20px;
+    background-color: #f6f6f6;
+    padding-top: 30px;
+    width: 100%;
+    top: 38%;
+}
+
+.image-restaurant {
+    img {
+        width: 100%;
+    }
+}
+
+.restaurant-menu {
+    background-color: #f6f6f6;
+    padding: 10px;
+    h3 {
+
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        width: 100%;
+        background-color:  #fdfdfd;
+        padding: 15px;
+        h4 {
+            font-size: 1.2em;
+            font-weight: 650;
+        }
+        h2 {
+            position: absolute;
+            right: 5%;
+            top: 25%;
+        }
+        p {
+         
+        }
     }
 }
