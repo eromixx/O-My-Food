@@ -261,6 +261,29 @@ body {
   font-weight: 800;
 }
 
+.restaurant-title-heart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.restaurant-title-heart .heart-solid {
+  opacity: 0;
+}
+.restaurant-title-heart .heart-solid:hover {
+  opacity: 1;
+  color: #cb68db;
+}
+.restaurant-title-heart .div-heart {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.restaurant-title-heart .div-heart i {
+  position: absolute;
+  font-size: 20px;
+}
+
 .restaurant-name {
   position: absolute;
   border-radius: 20px;
@@ -277,6 +300,29 @@ body {
 .restaurant-menu {
   background-color: #f6f6f6;
   padding: 10px;
+  margin-bottom: 30px;
+  margin-top: -100px;
+  z-index: 100;
+  position: relative;
+  border-radius: 30px;
+}
+.restaurant-menu .restaurant-button {
+  display: flex;
+  justify-content: center;
+}
+.restaurant-menu .restaurant-button button {
+  width: 50%;
+}
+.restaurant-menu h3 {
+  padding-bottom: 20px;
+}
+.restaurant-menu h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #99E2D0;
+  margin-top: 5px;
 }
 .restaurant-menu .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
