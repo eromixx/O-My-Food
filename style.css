@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .form-header {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -8,7 +12,7 @@
 
 .placeholder {
   border: none;
-  background-color: lightgrey;
+  background-color: #eaeaea;
   font-weight: 900;
   text-align: center;
   padding-bottom: 5px;
@@ -106,6 +110,7 @@
   display: flex;
   flex-direction: column;
   background-color: #f6f6f6;
+  padding-top: 10px;
 }
 .restaurant-section h2 {
   padding-left: 30px;
@@ -140,7 +145,7 @@
   contain: content;
   border-radius: 15px;
   background-color: #fdfdfd;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .card span {
   position: absolute;
@@ -244,6 +249,106 @@ footer ul {
     margin-right: 30px;
   }
 }
+.loading {
+  animation: once 2s normal forwards ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.loader {
+  position: absolute;
+  z-index: 301;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 303;
+  border-radius: 100%;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+}
+
+.spinner1 {
+  width: 100px;
+  height: 100px;
+  border: 10px solid #284bc0;
+  animation: spin 3s linear infinite;
+}
+
+.spinner2 {
+  width: 70px;
+  height: 70px;
+  border: 10px solid #0b4aa8;
+  animation: negative-spin 4s linear infinite;
+}
+
+.spinner3 {
+  width: 40px;
+  height: 40px;
+  border: 10px solid #043db9;
+  animation: spin 5s linear infinite;
+}
+
+.loader-text {
+  position: relative;
+  top: 75%;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.loading-hide {
+  animation: loadhide 3s normal forwards ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes negative-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+@keyframes once {
+  from {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1, 1.1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+}
+@keyframes loadhide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 body {
   background-color: #f6f6f6;
 }
@@ -251,10 +356,16 @@ body {
 .header-restaurant {
   display: flex;
   justify-content: center;
+  position: relative;
+  align-items: center;
 }
 .header-restaurant nav {
   display: flex;
   align-items: center;
+  position: absolute;
+  left: 10%;
+  font-size: 20px;
+  color: black;
 }
 .header-restaurant h1 {
   font-style: italic;
@@ -297,6 +408,18 @@ body {
   width: 100%;
 }
 
+.menu-loading-entry {
+  animation: loadmenu-entry 3s normal forwards ease;
+}
+
+.menu-loading-plate {
+  animation: loadmenu-plate 6s normal forwards ease;
+}
+
+.menu-loading-desert {
+  animation: loadmenu-desert 9s normal forwards ease;
+}
+
 .restaurant-menu {
   background-color: #f6f6f6;
   padding: 10px;
@@ -328,16 +451,66 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 100%;
   background-color: #fdfdfd;
-  padding: 15px;
+  display: flex;
 }
-.restaurant-menu .card h4 {
+.restaurant-menu .card .card-content {
+  padding: 15px;
+  padding-right: 20px;
+  width: 100%;
+  text-overflow: hidden;
+}
+.restaurant-menu .card .card-content h4 {
   font-size: 1.2em;
   font-weight: 650;
 }
-.restaurant-menu .card h2 {
+.restaurant-menu .card .card-content h2 {
   position: absolute;
+  bottom: 10%;
   right: 5%;
-  top: 25%;
+}
+.restaurant-menu .card .checkmark-container {
+  background-color: greenyellow;
+  padding: 20px;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  transition: all 1s ease;
+}
+.restaurant-menu .card .checkmark-container i {
+  position: relative;
+  bottom: 0;
+  right: 0;
+}
+
+.card:hover .checkmark-container {
+  margin-right: -1rem;
+}
+
+@keyframes loadmenu-entry {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes loadmenu-plate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes loadmenu-desert {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 * {
   padding: 0;
@@ -347,7 +520,7 @@ body {
 
 body {
   background-color: whitesmoke;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f6f6f6;
 }
 
@@ -359,13 +532,14 @@ body {
   display: flex;
   justify-content: center;
   font-style: oblique;
-  font-weight: 900;
+  font-weight: 60px;
+  font-family: "Shrikland";
 }
 
 .form-header {
   display: flex;
   justify-content: center;
-  background-color: lightgrey;
+  background-color: #eaeaea;
   font-weight: 700;
 }
 

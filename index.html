@@ -7,27 +7,36 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
             integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Oh-my-food</title>
     </head>
     <body>
-        <header class="section-header">
+        <div class="loading">
+            <div class="loader">
+                <span class="spinner spinner1"></span>
+                <span class="spinner spinner2"></span>
+                <span class="spinner spinner3"></span>
+                <span class="loader-text">CHARGEMENT...</span>
+            </div>
+        </div>
+        <header class="section-header loading-hide">
             <h1 class="header-title">ohmyfood</h1>
             <form class="form-header">
                 <i class="fa-solid fa-location-dot"></i>
                 <input type="text" placeholder="Paris, Belleville" class="placeholder">
             </form>
         </header>
-        <section class="first-section">
+        <section class="first-section loading-hide">
             <div class="div-first-section">
                 <h2>Reservez le menu qui vous convient</h2>
                 <p>Découvrer des restaurants d'exceptions sélectionnés par nos soins</p>
                 <button class="button-one">Explorer nos restaurants</button>
             </div>
         </section>
-        <section  class="second-section">
+        <section  class="second-section loading-hide">
             <h2>Fonctionnement</h2>
             <ul class="list-operation">
                 <li class="operation">
@@ -51,11 +60,11 @@
                 </li>
             </ul>
         </section>
-        <section class="restaurant-section">
+        <section class="restaurant-section loading-hide">
             <h2>Restaurants</h2>
             <div class="restaurant-list">
                 <div class="card">
-                   <a href="" class="restaurant-a">
+                   <a href="la-palette-du-gout.html" class="restaurant-a">
                         <img src="Images et textes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Avatar" style="width:100%">
                         <div class="container">
                             <h4><b>La palette du gout</b></h4>

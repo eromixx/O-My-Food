@@ -5,9 +5,15 @@ body {
 .header-restaurant {
     display: flex;
     justify-content: center;
+    position: relative;
+    align-items: center;
     nav {
         display: flex;
         align-items: center;
+        position: absolute;
+        left: 10%;
+        font-size: 20px;
+        color: black;
     }
     h1 {
         font-style: italic;
@@ -53,6 +59,19 @@ body {
     }
 }
 
+.menu-loading-entry {
+    animation: loadmenu-entry 3s normal forwards ease;
+}
+
+.menu-loading-plate {
+    animation: loadmenu-plate 6s normal forwards ease;
+}
+
+.menu-loading-desert {
+    animation: loadmenu-desert 9s normal forwards ease;
+}
+
+
 .restaurant-menu {
     background-color: #f6f6f6;
     padding: 10px;
@@ -83,18 +102,70 @@ body {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         width: 100%;
         background-color:  #fdfdfd;
-        padding: 15px;
-        h4 {
-            font-size: 1.2em;
-            font-weight: 650;
+        display: flex;
+        .card-content {
+            padding: 15px;
+            padding-right: 20px;
+            width: 100%;
+            text-overflow: hidden;
+            h4 {
+                font-size: 1.2em;
+                font-weight: 650;
+            }
+            h2 {
+                position: absolute;
+                bottom: 10%;
+                right: 5%;
+            }
         }
-        h2 {
-            position: absolute;
-            right: 5%;
-            top: 25%;
-        }
-        p {
-         
+                .checkmark-container {
+            background-color: greenyellow;
+            padding: 20px;
+            margin: -1rem -5rem -1rem 1rem;
+            width: 4rem;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            transition: all 1s ease;
+            i {
+                position: relative;
+                bottom: 0;
+                right: 0;
+            }
         }
     }
+}
+
+        .card:hover .checkmark-container{
+                margin-right: -1rem;
+        }
+
+@keyframes loadmenu-entry{
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+
+}
+
+@keyframes loadmenu-plate {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+
+}
+
+@keyframes loadmenu-desert {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+
 }
