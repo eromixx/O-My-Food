@@ -2,6 +2,69 @@ body {
   margin: 0;
 }
 
+.loading {
+  animation: once 4s normal forwards ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.loader {
+  position: absolute;
+  z-index: 301;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 303;
+  border-radius: 100%;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+}
+
+.spinner1 {
+  width: 100px;
+  height: 100px;
+  border: 10px solid #cb68db;
+  animation: spin 3s linear infinite;
+}
+
+.spinner2 {
+  width: 70px;
+  height: 70px;
+  border: 10px solid #cb68db;
+  animation: negative-spin 4s linear infinite;
+}
+
+.spinner3 {
+  width: 40px;
+  height: 40px;
+  border: 10px solid #cb68db;
+  animation: spin 5s linear infinite;
+}
+
+.loader-text {
+  position: relative;
+  top: 75%;
+  font-weight: bold;
+  color: #cb68db;
+  margin-top: 5px;
+}
+
+.loading-hide {
+  animation: loadhide 3s normal forwards ease-in-out;
+}
+
 .form-header {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -115,6 +178,7 @@ body {
 .restaurant-section h2 {
   padding-left: 30px;
   padding-bottom: 30px;
+  padding-top: 20px;
 }
 
 .restaurant-a {
@@ -124,6 +188,7 @@ body {
 }
 .restaurant-a p {
   display: flex;
+  padding-top: 5px;
 }
 .restaurant-a i {
   position: absolute;
@@ -136,6 +201,9 @@ body {
   height: 280px;
   object-fit: cover;
 }
+.restaurant-a .container {
+  padding: 10px 16px;
+}
 
 .card {
   transition: 0.3s;
@@ -147,7 +215,7 @@ body {
   background-color: #fdfdfd;
   margin-bottom: 30px;
 }
-.card span {
+.card .new-restaurant {
   position: absolute;
   top: 10%;
   right: 5%;
@@ -161,6 +229,7 @@ body {
   position: absolute;
   bottom: 5%;
   right: 10%;
+  font-size: 25px;
 }
 .card .heart-solid {
   opacity: 0;
@@ -249,68 +318,6 @@ footer ul {
     margin-right: 30px;
   }
 }
-.loading {
-  animation: once 2s normal forwards ease-in-out;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-.loader {
-  position: absolute;
-  z-index: 301;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 200px;
-  width: 200px;
-  overflow: hidden;
-  text-align: center;
-}
-
-.spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 303;
-  border-radius: 100%;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-}
-
-.spinner1 {
-  width: 100px;
-  height: 100px;
-  border: 10px solid #284bc0;
-  animation: spin 3s linear infinite;
-}
-
-.spinner2 {
-  width: 70px;
-  height: 70px;
-  border: 10px solid #0b4aa8;
-  animation: negative-spin 4s linear infinite;
-}
-
-.spinner3 {
-  width: 40px;
-  height: 40px;
-  border: 10px solid #043db9;
-  animation: spin 5s linear infinite;
-}
-
-.loader-text {
-  position: relative;
-  top: 75%;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.loading-hide {
-  animation: loadhide 3s normal forwards ease-in-out;
-}
-
 @keyframes spin {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -345,6 +352,9 @@ footer ul {
   from {
     opacity: 0;
   }
+  50% {
+    opacity: 0;
+  }
   to {
     opacity: 1;
   }
@@ -367,9 +377,9 @@ body {
   font-size: 20px;
   color: black;
 }
-.header-restaurant h1 {
-  font-style: italic;
-  font-weight: 800;
+.header-restaurant span {
+  font-family: "Shrikhand";
+  font-size: 30px;
 }
 
 .restaurant-title-heart {
@@ -394,6 +404,11 @@ body {
   position: absolute;
   font-size: 20px;
 }
+.restaurant-title-heart h1 {
+  padding: 20px;
+  font-family: "Shrikhand";
+  font-size: 30px;
+}
 
 .restaurant-name {
   position: absolute;
@@ -402,10 +417,13 @@ body {
   padding-top: 30px;
   width: 100%;
   top: 38%;
+  font-family: "Shrikhand";
 }
 
 .image-restaurant img {
   width: 100%;
+  height: 450px;
+  object-fit: cover;
 }
 
 .menu-loading-entry {
@@ -457,20 +475,19 @@ body {
   padding: 15px;
   padding-right: 20px;
   width: 100%;
-  text-overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 .restaurant-menu .card .card-content h4 {
   font-size: 1.2em;
   font-weight: 650;
 }
-.restaurant-menu .card .card-content h2 {
-  position: absolute;
-  bottom: 10%;
-  right: 5%;
+.restaurant-menu .card .card-content span {
+  font-weight: 800;
 }
 .restaurant-menu .card .checkmark-container {
-  background-color: greenyellow;
-  padding: 20px;
+  background-color: #99e2d0;
+  padding: 25px;
   margin: -1rem -5rem -1rem 1rem;
   width: 4rem;
   justify-content: center;
@@ -482,12 +499,75 @@ body {
   position: relative;
   bottom: 0;
   right: 0;
+  color: #ffffff;
+}
+
+.button-one-restaurant {
+  padding: 15px;
+  border: none;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 70%;
+  align-self: center;
 }
 
 .card:hover .checkmark-container {
   margin-right: -1rem;
 }
 
+@media (min-width: 1024px) {
+  .header-restaurant {
+    padding-left: 40px;
+    height: 80px;
+  }
+  .restaurant-title-heart {
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+  .restaurant-menu {
+    width: 70%;
+    margin: -100px auto 50px auto;
+    padding: 40px;
+  }
+  .restaurant-menu h3 {
+    font-size: 1.3rem;
+    padding-bottom: 20px;
+  }
+  .restaurant-menu .card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .restaurant-menu .card-content {
+    width: 90%;
+  }
+  .restaurant-button {
+    margin-top: 40px;
+  }
+  .button-one-restaurant {
+    width: 30%;
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    padding: 40px;
+  }
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+}
 @keyframes loadmenu-entry {
   from {
     opacity: 0;
@@ -531,9 +611,8 @@ body {
 .header-title {
   display: flex;
   justify-content: center;
-  font-style: oblique;
-  font-weight: 60px;
-  font-family: "Shrikland";
+  font-size: 30px;
+  font-family: "Shrikhand";
 }
 
 .form-header {
