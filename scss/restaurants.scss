@@ -111,30 +111,51 @@ body {
         width: 100%;
         background-color:  #fdfdfd;
         display: flex;
+        overflow: hidden;
         .card-content {
             padding: 15px;
             padding-right: 20px;
             width: 100%;
             display: flex;
             justify-content: space-between;
+            overflow: hidden;
             h4 {
                 font-size: 1.2em;
                 font-weight: 650;
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                flex-wrap: nowrap;
             }
             span {
                 font-weight: 800;
             }
-
-        }
+            p {
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                flex-wrap: nowrap;
+            }
+            .text-container {
+                max-width: 70%;
+                max-height: 70%;
+            }
+            .text-container h4, p{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }               
+            }
+    }
         .checkmark-container {
         background-color: #99e2d0;
         padding: 25px;
         margin: -1rem -5rem -1rem 1rem;
-        width: 4rem;
+        width: 5rem;
         justify-content: center;
         display: flex;
         align-items: center;
-        transition: all 1s ease;
+        transition: all 2s ease;
         i {
             position: relative;
             bottom: 0;
@@ -143,7 +164,7 @@ body {
         }
         }
     }
-}
+
 
 .button-one-restaurant {
     padding: 15px;

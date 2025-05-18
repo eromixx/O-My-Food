@@ -470,6 +470,7 @@ body {
   width: 100%;
   background-color: #fdfdfd;
   display: flex;
+  overflow: hidden;
 }
 .restaurant-menu .card .card-content {
   padding: 15px;
@@ -477,25 +478,45 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 .restaurant-menu .card .card-content h4 {
   font-size: 1.2em;
   font-weight: 650;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-wrap: nowrap;
 }
 .restaurant-menu .card .card-content span {
   font-weight: 800;
 }
-.restaurant-menu .card .checkmark-container {
+.restaurant-menu .card .card-content p {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-wrap: nowrap;
+}
+.restaurant-menu .card .card-content .text-container {
+  max-width: 70%;
+  max-height: 70%;
+}
+.restaurant-menu .card .card-content .text-container h4, .restaurant-menu .card .card-content p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.restaurant-menu .checkmark-container {
   background-color: #99e2d0;
   padding: 25px;
   margin: -1rem -5rem -1rem 1rem;
-  width: 4rem;
+  width: 5rem;
   justify-content: center;
   display: flex;
   align-items: center;
-  transition: all 1s ease;
+  transition: all 2s ease;
 }
-.restaurant-menu .card .checkmark-container i {
+.restaurant-menu .checkmark-container i {
   position: relative;
   bottom: 0;
   right: 0;
